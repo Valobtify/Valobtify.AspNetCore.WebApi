@@ -4,7 +4,30 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Valobtify.AspNetCore.WebApi</Title>
+    <Version>2.0.1</Version>
+    <Description>A package for handling value objects in ASP.NET Core Web API with automatic mapping and Swagger integration for easy API documentation.</Description>
+    <RepositoryUrl>https://github.com/Valobtify/Valobtify.AspNetCore.WebApi</RepositoryUrl>
+    <PackageIcon>ValobtifyIcon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\ValobtifyIcon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Resulver" Version="1.2.5" />
