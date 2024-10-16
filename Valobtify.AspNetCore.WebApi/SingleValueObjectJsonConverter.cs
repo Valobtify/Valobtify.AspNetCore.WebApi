@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace Valobtify.AspNetCore.WebApi;
@@ -11,9 +12,9 @@ public class SingleValueObjectJsonConverter<TSingleValueObject, TValue> : JsonCo
     {
         TValue? value = JsonSerializer.Deserialize<TValue>(ref reader, options);
 
-        ArgumentNullException.ThrowIfNull(value, "value");
+        if (value is null) return null;
 
-        return TSingleValueObject.Create(value) ?? throw new JsonException($"Failed to create {typeof(TSingleValueObject).Name} from the value '{value}'.");
+        return TSingleValueObject.Create(value) ?? throw new ValidationException("value is not valid");
     }
 
     public override void Write(Utf8JsonWriter writer, TSingleValueObject value, JsonSerializerOptions options)
