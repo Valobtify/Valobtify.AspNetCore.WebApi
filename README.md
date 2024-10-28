@@ -13,7 +13,7 @@ dotnet add package Valobtify
 ### Model mapping
 
 ```csharp
-builder.Services.AddValobtifyConverters();
+builder.Services.AddValobtifyConverters(Assembly.GetExecutingAssembly());
 ```
 
 ### Swagger support

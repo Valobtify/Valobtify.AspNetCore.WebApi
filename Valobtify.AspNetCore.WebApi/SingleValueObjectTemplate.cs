@@ -2,7 +2,7 @@
 
 namespace Valobtify.AspNetCore.WebApi;
 
-internal class SingleValueObjectTemplate :
+internal sealed class SingleValueObjectTemplate :
     SingleValueObject<SingleValueObjectTemplate, string>,
     ICreatableValueObject<SingleValueObjectTemplate, string>
 {

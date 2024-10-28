@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Valobtify.AspNetCore.WebApi</Title>
-    <Version>2.0.1</Version>
+    <Version>2.0.2</Version>
     <Description>A package for handling value objects in ASP.NET Core Web API with automatic mapping and Swagger integration for easy API documentation.</Description>
     <RepositoryUrl>https://github.com/Valobtify/Valobtify.AspNetCore.WebApi</RepositoryUrl>
     <PackageIcon>ValobtifyIcon.png</PackageIcon>
