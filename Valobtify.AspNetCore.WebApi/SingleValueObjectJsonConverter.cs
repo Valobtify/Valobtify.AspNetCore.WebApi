@@ -6,11 +6,14 @@ namespace Valobtify.AspNetCore.WebApi;
 public class SingleValueObjectJsonConverter<TSingleValueObject, TValue> : JsonConverter<TSingleValueObject>
     where TSingleValueObject : SingleValueObject<TSingleValueObject, TValue>,
     ICreatableValueObject<TSingleValueObject, TValue>
+    where TValue : notnull
 {
     public override TSingleValueObject? Read(ref Utf8JsonReader reader, Type typeToConvert,
         JsonSerializerOptions options)
     {
         var value = JsonSerializer.Deserialize<TValue>(ref reader, options);
+
+        if (value is null) return null;
 
         var result = TSingleValueObject.Create(value);
 
