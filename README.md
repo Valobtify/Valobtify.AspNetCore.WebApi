@@ -11,7 +11,7 @@
 
 ### Overview
 
-`Valobtify.AspNetCore.WebApi` is an extension of the `Valobtify` library that simplifies the integration of value objects into ASP.NET Core Web APIs. It provides built-in support for model mapping and Swagger documentation, making it easier to work with value objects in your API projects.
+`Valobtify.AspNetCore.WebApi` is an extension of the `Valobtify` library that simplifies the integration of value objects into ASP.NET Core Web APIs. It provides built-in support for model mapping , making it easier to work with value objects in your API projects.
 
 ---
 
@@ -39,11 +39,8 @@ This ensures that `Valobtify` correctly maps your value objects within your appl
 
 ---
 
+
 ### Swagger Support
 
-To integrate `Valobtify` with Swagger and automatically generate schema filters for value objects, add this configuration to your `Program.cs` file:
-
-```csharp
-builder.Services.AddSwaggerGen(c => c.AddValobtifySchemaFilters());
-```
+To integrate `Valobtify` with Swagger and automatically generate schema filters for value objects, you can use [Valobtify.Swagger](https://github.com/Valobtify/Valobtify.Swagger)
 

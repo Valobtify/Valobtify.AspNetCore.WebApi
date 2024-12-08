@@ -1,14 +1,13 @@
 ﻿using System.Reflection;
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.DependencyInjection;
-using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Valobtify.AspNetCore.WebApi;
 
 public static class Extensions
 {
-    private static readonly SingleValueObjectTemplate Template = SingleValueObjectTemplate.Create("").Content!;
-
+    private static readonly SingleValueObjectTemplate Template = SingleValueObjectTemplate.Create("")!;
+    
     internal static bool IsSingleValueObject(this Type type)
     {
         return type.BaseType is { IsGenericType: true } baseType && baseType
@@ -35,20 +34,11 @@ public static class Extensions
         return services;
     }
 
-    public static SwaggerGenOptions AddValobtifySchemaFilters(this SwaggerGenOptions options)
-    {
-        options.SchemaFilter<SingleValueObjectSchemaFilter>();
-
-        return options;
-    }
-
     private static JsonConverter CreateJsonConverter(this Type type)
     {
-        var converters = new List<JsonConverter>();
-
         if (!type.IsSingleValueObject()) throw new InvalidOperationException("type is not SingleValueObject");
 
-        var valueObjectValueType = type.GetProperty(nameof(Template.Value))!.PropertyType;
+        var valueObjectValueType = type.GetProperty(Template.Value)!.PropertyType;
 
         var converterType = typeof(SingleValueObjectJsonConverter<,>).MakeGenericType(type, valueObjectValueType);
 

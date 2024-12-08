@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Valobtify.AspNetCore.WebApi</Title>
-    <Version>2.1.2</Version>
-    <Description>A package for handling value objects in ASP.NET Core Web API with automatic mapping and Swagger integration for easy API documentation.</Description>
+    <Version>3.0.0-rc.1</Version>
+    <Description>A package for handling value objects in ASP.NET Core Web API with automatic mapping.</Description>
     <RepositoryUrl>https://github.com/Valobtify/Valobtify.AspNetCore.WebApi</RepositoryUrl>
     <PackageIcon>ValobtifyIcon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -32,7 +32,7 @@
   <ItemGroup>
     <PackageReference Include="Resulver" Version="1.2.5" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.9.0" />
-    <PackageReference Include="Valobtify" Version="2.1.1" />
+    <PackageReference Include="Valobtify" Version="3.0.0-rc.1" />
   </ItemGroup>
 
 </Project>
